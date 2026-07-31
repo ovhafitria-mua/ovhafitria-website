@@ -1,0 +1,378 @@
+/* ============================================
+   DESIGN TOKENS
+   Palette terinspirasi dari makeup: base ivory,
+   blush, dusty rose, dan gold sebagai highlight.
+   ============================================ */
+:root {
+  --ivory: #FBF5F1;
+  --blush: #F3DEDD;
+  --rose: #C1798A;
+  --rose-dark: #9C5A6B;
+  --plum: #3B2530;
+  --gold: #B8925A;
+  --white: #FFFFFF;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Work Sans", sans-serif;
+
+  --radius: 18px;
+  --max-width: 1080px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--plum);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rose-dark);
+  font-weight: 600;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--plum);
+  margin: 0;
+}
+
+/* ============================================
+   BRUSH STROKE SIGNATURE ELEMENT
+   ============================================ */
+.brush-divider {
+  width: 100%;
+  height: 46px;
+  margin: 0 auto;
+  display: block;
+}
+.brush-divider path { fill: var(--rose); opacity: 0.55; }
+
+.brush-underline {
+  position: relative;
+  display: inline-block;
+}
+.brush-underline svg {
+  position: absolute;
+  left: -4%;
+  bottom: -0.18em;
+  width: 108%;
+  height: 0.5em;
+  z-index: -1;
+}
+.brush-underline svg path { fill: var(--blush); }
+
+/* ============================================
+   NAV
+   ============================================ */
+header.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(251, 245, 241, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(59, 37, 48, 0.08);
+}
+.site-nav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.brand {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--plum);
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+nav a:hover { opacity: 1; }
+.nav-cta {
+  background: var(--rose);
+  color: var(--white) !important;
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  opacity: 1 !important;
+}
+
+@media (max-width: 780px) {
+  nav ul:not(.nav-cta-wrap) { display: none; }
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  padding: 64px 0 40px;
+}
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+.hero h1 {
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  line-height: 1.02;
+  margin: 14px 0 20px;
+}
+.hero p.tagline {
+  font-size: 1.08rem;
+  max-width: 46ch;
+  opacity: 0.85;
+  margin-bottom: 30px;
+}
+.hero-photo {
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  background: var(--blush);
+}
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+.cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn {
+  display: inline-block;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-primary { background: var(--rose); color: var(--white); }
+.btn-secondary { background: transparent; color: var(--plum); border: 1.5px solid var(--plum); }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(59,37,48,0.15); }
+
+/* ============================================
+   SECTION SHELL
+   ============================================ */
+section { padding: 70px 0; }
+.section-head { text-align: center; max-width: 640px; margin: 0 auto 44px; }
+.section-head h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); margin-top: 10px; }
+.section-alt { background: var(--blush); }
+
+/* ============================================
+   ABOUT
+   ============================================ */
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 48px;
+  align-items: center;
+}
+.about-photo {
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 1/1;
+  background: var(--rose);
+}
+.about-photo img { width: 100%; height: 100%; object-fit: cover; }
+.about-text h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 18px; }
+.about-text p { margin: 0 0 14px; opacity: 0.88; }
+.highlight-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+.highlight-chip {
+  background: var(--white);
+  border: 1px solid rgba(59,37,48,0.1);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--rose-dark);
+}
+
+/* ============================================
+   SERVICES / TABS
+   ============================================ */
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+.tab-btn {
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1.5px solid var(--rose);
+  background: transparent;
+  color: var(--rose-dark);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.tab-btn.active, .tab-btn:hover {
+  background: var(--rose);
+  color: var(--white);
+}
+.tab-panel { display: none; }
+.tab-panel.active { display: block; animation: fade 0.35s ease; }
+@keyframes fade { from { opacity: 0; transform: translateY(6px);} to { opacity: 1; transform: translateY(0);} }
+
+.service-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 36px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.service-card h3 { font-size: 1.5rem; margin-bottom: 10px; }
+.service-card > p { opacity: 0.85; margin-bottom: 24px; }
+.package-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 16px 0;
+  border-top: 1px solid rgba(59,37,48,0.1);
+  gap: 16px;
+}
+.package-row .pkg-name { font-weight: 600; }
+.package-row .pkg-note { font-size: 0.82rem; opacity: 0.6; display: block; }
+.package-row .pkg-price { font-family: var(--font-display); color: var(--rose-dark); font-weight: 600; white-space: nowrap; }
+.service-card .btn { margin-top: 26px; }
+
+/* ============================================
+   YOUTUBE
+   ============================================ */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.video-frame {
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  background: var(--plum);
+}
+.video-frame iframe { width: 100%; height: 100%; border: 0; }
+
+/* ============================================
+   PRODUCTS (Racun Ovha)
+   ============================================ */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+.product-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 18px;
+  border: 1px solid rgba(59,37,48,0.08);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.product-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(59,37,48,0.1); }
+.product-card .p-name { font-weight: 600; font-size: 0.92rem; margin-bottom: 10px; display: block; min-height: 2.6em; }
+.product-card .p-link { color: var(--rose-dark); font-size: 0.82rem; font-weight: 700; }
+
+/* ============================================
+   TESTIMONIALS
+   ============================================ */
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.testi-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 26px;
+}
+.testi-stars { color: var(--gold); letter-spacing: 2px; margin-bottom: 10px; }
+.testi-quote { font-style: italic; opacity: 0.88; margin-bottom: 16px; }
+.testi-name { font-weight: 700; font-size: 0.9rem; }
+.testi-cat { font-size: 0.8rem; opacity: 0.6; }
+
+/* ============================================
+   BOOKING
+   ============================================ */
+.booking-box {
+  background: var(--plum);
+  color: var(--ivory);
+  border-radius: 28px;
+  padding: 60px 40px;
+  text-align: center;
+}
+.booking-box h2 { color: var(--ivory); font-size: clamp(1.9rem, 3.4vw, 2.6rem); }
+.booking-box p { opacity: 0.8; max-width: 46ch; margin: 14px auto 30px; }
+.booking-box .btn-primary { background: var(--rose); }
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  padding: 40px 0;
+  text-align: center;
+}
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+.footer-socials a { font-weight: 600; font-size: 0.88rem; color: var(--rose-dark); }
+footer .fine-print { font-size: 0.78rem; opacity: 0.55; }
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 780px) {
+  .hero .wrap { grid-template-columns: 1fr; }
+  .hero-photo { order: -1; max-width: 320px; margin: 0 auto; }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-photo { max-width: 320px; margin: 0 auto; }
+  section { padding: 52px 0; }
+}
+
+/* Accessibility: visible focus */
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
