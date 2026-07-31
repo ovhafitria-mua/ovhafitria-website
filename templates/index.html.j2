@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ site.title }}</title>
+<meta name="description" content="{{ site.description }}">
+<meta property="og:title" content="{{ site.title }}">
+<meta property="og:description" content="{{ site.description }}">
+<meta property="og:image" content="{{ site.og_image }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+{% macro brush_divider() -%}
+<svg class="brush-divider" viewBox="0 0 600 46" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0,28 C60,10 120,42 180,26 C240,10 300,38 360,24 C420,12 480,36 540,22 C570,16 590,20 600,18 L600,46 L0,46 Z"/>
+</svg>
+{%- endmacro %}
+
+{% macro brush_underline() -%}
+<span class="brush-underline">{{ caller() }}<svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2,14 C40,4 70,18 100,10 C130,3 160,16 198,8 L198,20 L2,20 Z"/></svg></span>
+{%- endmacro %}
+
+<header class="site-nav">
+  <div class="wrap">
+    <div class="brand">{{ hero.name }}</div>
+    <nav>
+      <ul>
+        {% for item in nav %}
+        <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+        {% endfor %}
+        <li><a class="nav-cta" href="#booking">Book Now</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">{{ hero.eyebrow }}</p>
+      <h1>{% call brush_underline() %}{{ hero.name }}{% endcall %}</h1>
+      <p class="tagline">{{ hero.tagline }}</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="{{ hero.cta_primary.href }}">{{ hero.cta_primary.label }}</a>
+        <a class="btn btn-secondary" href="{{ hero.cta_secondary.href }}">{{ hero.cta_secondary.label }}</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="{{ hero.photo }}" alt="Foto {{ hero.name }}">
+    </div>
+  </div>
+</section>
+
+{{ brush_divider() }}
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-photo">
+      <img src="{{ about.photo }}" alt="Foto About {{ hero.name }}">
+    </div>
+    <div class="about-text">
+      <p class="eyebrow">Tentang</p>
+      <h2>{{ about.heading }}</h2>
+      {% for para in about.body %}
+      <p>{{ para }}</p>
+      {% endfor %}
+      <div class="highlight-row">
+        {% for h in about.highlights %}
+        <span class="highlight-chip">{{ h }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Layanan & Harga</p>
+      <h2>Services & Price List</h2>
+    </div>
+    <div class="tab-buttons" role="tablist">
+      {% for s in services %}
+      <button class="tab-btn{% if loop.first %} active{% endif %}" data-tab="{{ s.id }}" role="tab">{{ s.tab_label }}</button>
+      {% endfor %}
+    </div>
+    {% for s in services %}
+    <div class="tab-panel{% if loop.first %} active{% endif %}" id="panel-{{ s.id }}">
+      <div class="service-card">
+        <h3>{{ s.title }}</h3>
+        <p>{{ s.description }}</p>
+        {% for pkg in s.packages %}
+        <div class="package-row">
+          <span>
+            <span class="pkg-name">{{ pkg.name }}</span>
+            <span class="pkg-note">{{ pkg.note }}</span>
+          </span>
+          <span class="pkg-price">{{ pkg.price }}</span>
+        </div>
+        {% endfor %}
+        <a class="btn btn-primary" href="#booking">Book {{ s.tab_label }}</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{{ brush_divider() }}
+
+<section id="tutorial">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">YouTube</p>
+      <h2>{{ youtube.heading }}</h2>
+      <p>{{ youtube.subheading }}</p>
+    </div>
+    <div class="video-grid">
+      {% for v in youtube.videos %}
+      <div class="video-frame">
+        <iframe src="{{ v.embed_url }}" title="{{ v.title }}" allowfullscreen loading="lazy"></iframe>
+      </div>
+      {% endfor %}
+    </div>
+    <div style="text-align:center; margin-top:28px;">
+      <a class="btn btn-secondary" href="{{ youtube.channel_url }}" target="_blank" rel="noopener">Subscribe di YouTube</a>
+    </div>
+  </div>
+</section>
+
+<section id="racun" class="section-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Rekomendasi</p>
+      <h2>{{ products.heading }}</h2>
+      <p>{{ products.subheading }}</p>
+    </div>
+    <div class="product-grid">
+      {% for p in products.list %}
+      <div class="product-card">
+        <span class="p-name">{{ p.name }}</span>
+        <a class="p-link" href="{{ p.url }}" target="_blank" rel="noopener">Cek Produk &rarr;</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="testimoni">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Testimoni</p>
+      <h2>{{ testimonials.heading }}</h2>
+    </div>
+    <div class="testi-grid">
+      {% for t in testimonials.list %}
+      <div class="testi-card">
+        <div class="testi-stars">{{ '★' * t.rating }}</div>
+        <p class="testi-quote">&ldquo;{{ t.quote }}&rdquo;</p>
+        <div class="testi-name">{{ t.name }}</div>
+        <div class="testi-cat">{{ t.category }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{{ brush_divider() }}
+
+<section id="booking">
+  <div class="wrap">
+    <div class="booking-box">
+      <p class="eyebrow" style="color:var(--gold)">Booking</p>
+      <h2>{{ booking.heading }}</h2>
+      <p>{{ booking.subheading }}</p>
+      <a class="btn btn-primary" href="https://wa.me/{{ booking.whatsapp_number }}?text={{ booking.whatsapp_message | urlencode }}" target="_blank" rel="noopener">Chat via WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-socials">
+      {% for s in socials %}
+      <a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.platform }} &middot; {{ s.handle }}</a>
+      {% endfor %}
+    </div>
+    <p class="fine-print">{{ footer.note }}</p>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.tab-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+    document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+  });
+});
+</script>
+
+</body>
+</html>
