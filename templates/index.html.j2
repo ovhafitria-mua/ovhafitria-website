@@ -9,62 +9,77 @@
 <meta property="og:description" content="{{ site.description }}">
 <meta property="og:image" content="{{ site.og_image }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-{% macro brush_divider() -%}
-<svg class="brush-divider" viewBox="0 0 600 46" preserveAspectRatio="none" aria-hidden="true">
-  <path d="M0,28 C60,10 120,42 180,26 C240,10 300,38 360,24 C420,12 480,36 540,22 C570,16 590,20 600,18 L600,46 L0,46 Z"/>
-</svg>
-{%- endmacro %}
-
-{% macro brush_underline() -%}
-<span class="brush-underline">{{ caller() }}<svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2,14 C40,4 70,18 100,10 C130,3 160,16 198,8 L198,20 L2,20 Z"/></svg></span>
-{%- endmacro %}
+{% set name_parts = hero.name.split(' ', 1) %}
 
 <header class="site-nav">
   <div class="wrap">
     <div class="brand">{{ hero.name }}</div>
-    <nav>
-      <ul>
-        {% for item in nav %}
-        <li><a href="{{ item.href }}">{{ item.label }}</a></li>
-        {% endfor %}
-        <li><a class="nav-cta" href="#booking">Book Now</a></li>
-      </ul>
-    </nav>
+    <button class="hamburger-btn" onclick="document.getElementById('menuOverlay').classList.add('open')" aria-label="Buka menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
+<div class="menu-overlay" id="menuOverlay">
+  <div class="menu-overlay-head">
+    <div class="brand">{{ hero.name }}</div>
+    <button class="menu-close-btn" onclick="document.getElementById('menuOverlay').classList.remove('open')" aria-label="Tutup menu">&times;</button>
+  </div>
+  <div class="menu-list">
+    {% for item in nav %}
+    <a class="menu-row{% if loop.first %} is-first{% elif loop.last %} is-last{% endif %}" href="{{ item.href }}" onclick="document.getElementById('menuOverlay').classList.remove('open')">
+      <span class="menu-row-inner"><span class="num">{{ '%02d'|format(loop.index) }}</span>{{ item.label }}</span>
+      <span>&rarr;</span>
+    </a>
+    {% endfor %}
+  </div>
+  <div class="menu-overlay-foot">
+    <span class="brand">{{ hero.name }}</span>
+    <p>{{ hero.eyebrow }}</p>
+  </div>
+</div>
+
 <section class="hero" id="home">
-  <div class="wrap">
-    <div>
-      <p class="eyebrow">{{ hero.eyebrow }}</p>
-      <h1>{% call brush_underline() %}{{ hero.name }}{% endcall %}</h1>
-      <p class="tagline">{{ hero.tagline }}</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="{{ hero.cta_primary.href }}">{{ hero.cta_primary.label }}</a>
-        <a class="btn btn-secondary" href="{{ hero.cta_secondary.href }}">{{ hero.cta_secondary.label }}</a>
-      </div>
-    </div>
-    <div class="hero-photo">
-      <img src="{{ hero.photo }}" alt="Foto {{ hero.name }}">
+  <div class="hero-media">
+    <img src="{{ hero.photo }}" alt="Foto {{ hero.name }}">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content wrap">
+    <span class="hero-eyebrow-pill">{{ hero.eyebrow }}</span>
+    <h1>{{ name_parts[0] }}{% if name_parts|length > 1 %} <span class="script">{{ name_parts[1] }}</span>{% endif %}</h1>
+    <p class="tagline">{{ hero.tagline }}</p>
+    <div class="hero-buttons">
+      {% for item in nav %}
+      <a class="pill-btn {% if loop.first %}solid{% else %}outline{% endif %}" href="{{ item.href }}">
+        <span>{{ item.label }}</span><span class="arrow">&rarr;</span>
+      </a>
+      {% endfor %}
     </div>
   </div>
 </section>
 
-{{ brush_divider() }}
-
 <section id="about">
   <div class="wrap about-grid">
-    <div class="about-photo">
-      <img src="{{ about.photo }}" alt="Foto About {{ hero.name }}">
+    <div class="about-photo-wrap">
+      <div class="about-photo">
+        <img src="{{ about.photo }}" alt="Foto About {{ hero.name }}">
+      </div>
+      {% if about.highlights and about.highlights|length > 0 %}
+      <div class="about-badge">
+        <span class="star">&#9733;</span>
+        <strong>{{ about.highlights[0] }}</strong>
+        <span>{{ about.highlights[1] if about.highlights|length > 1 else '' }}</span>
+      </div>
+      {% endif %}
     </div>
     <div class="about-text">
-      <p class="eyebrow">Tentang</p>
-      <h2>{{ about.heading }}</h2>
+      <p class="eyebrow">Tentang {{ name_parts[0] }}</p>
+      <h2>Halo, aku <span class="script">{{ name_parts[0] }}</span>!</h2>
       {% for para in about.body %}
       <p>{{ para }}</p>
       {% endfor %}
@@ -89,9 +104,10 @@
       {% endfor %}
     </div>
     {% for s in services %}
+    {% set tparts = s.title.split(' ', 1) %}
     <div class="tab-panel{% if loop.first %} active{% endif %}" id="panel-{{ s.id }}">
       <div class="service-card">
-        <h3>{{ s.title }}</h3>
+        <h3>{{ tparts[0] }}{% if tparts|length > 1 %} <span class="italic-serif">{{ tparts[1] }}</span>{% endif %}</h3>
         <p>{{ s.description }}</p>
         {% for pkg in s.packages %}
         <div class="package-row">
@@ -102,14 +118,12 @@
           <span class="pkg-price">{{ pkg.price }}</span>
         </div>
         {% endfor %}
-        <a class="btn btn-primary" href="#booking">Book {{ s.tab_label }}</a>
+        <a class="cta-link" href="#booking">Book {{ s.tab_label }}</a>
       </div>
     </div>
     {% endfor %}
   </div>
 </section>
-
-{{ brush_divider() }}
 
 <section id="tutorial">
   <div class="wrap">
@@ -126,7 +140,7 @@
       {% endfor %}
     </div>
     <div style="text-align:center; margin-top:28px;">
-      <a class="btn btn-secondary" href="{{ youtube.channel_url }}" target="_blank" rel="noopener">Subscribe di YouTube</a>
+      <a class="cta-link" href="{{ youtube.channel_url }}" target="_blank" rel="noopener">Subscribe di YouTube</a>
     </div>
   </div>
 </section>
@@ -168,15 +182,14 @@
   </div>
 </section>
 
-{{ brush_divider() }}
-
 <section id="booking">
   <div class="wrap">
+    {% set bparts = booking.heading.split(' ', 1) %}
     <div class="booking-box">
-      <p class="eyebrow" style="color:var(--gold)">Booking</p>
-      <h2>{{ booking.heading }}</h2>
+      <p class="eyebrow">Luxury Booking</p>
+      <h2><span class="script">{{ bparts[0] }}</span>{% if bparts|length > 1 %} {{ bparts[1] }}{% endif %}</h2>
       <p>{{ booking.subheading }}</p>
-      <a class="btn btn-primary" href="https://wa.me/{{ booking.whatsapp_number }}?text={{ booking.whatsapp_message | urlencode }}" target="_blank" rel="noopener">Chat via WhatsApp</a>
+      <a class="booking-cta" href="https://wa.me/{{ booking.whatsapp_number }}?text={{ booking.whatsapp_message | urlencode }}" target="_blank" rel="noopener">Chat via WhatsApp</a>
     </div>
   </div>
 </section>
