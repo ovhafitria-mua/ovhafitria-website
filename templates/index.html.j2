@@ -110,12 +110,10 @@
         <h3>{{ tparts[0] }}{% if tparts|length > 1 %} <span class="italic-serif">{{ tparts[1] }}</span>{% endif %}</h3>
         <p>{{ s.description }}</p>
         {% for pkg in s.packages %}
+        {% set pkg_msg = 'Halo kak Ovha, saya mau tanya harga untuk paket ' ~ pkg.name ~ ' (' ~ s.title ~ ').' %}
         <div class="package-row">
-          <span>
-            <span class="pkg-name">{{ pkg.name }}</span>
-            <span class="pkg-note">{{ pkg.note }}</span>
-          </span>
-          <span class="pkg-price">{{ pkg.price }}</span>
+          <span class="pkg-name">{{ pkg.name }}</span>
+          <a class="pkg-price-btn" href="https://wa.me/{{ booking.whatsapp_number }}?text={{ pkg_msg | urlencode }}" target="_blank" rel="noopener">Tanya Harga &rarr;</a>
         </div>
         {% endfor %}
         <a class="cta-link" href="#booking">Book {{ s.tab_label }}</a>
