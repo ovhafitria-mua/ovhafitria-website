@@ -44,8 +44,8 @@
       "title": "Bridal Makeup",
       "description": "Signature Soft Luxe Glam dengan sentuhan yang lembut, mewah, dan flawless, menciptakan tampilan yang elegan, timeless, dan berkelas.",
       "packages": [
-        { "name": "Ceremony / Reception Only", "price": "Rp 0.000.000", "note": "EDIT: isi harga asli — 1 sesi" },
-        { "name": "Ceremony & Reception", "price": "Rp 0.000.000", "note": "EDIT: isi harga asli — full day" }
+        { "name": "Ceremony / Reception Only" },
+        { "name": "Ceremony & Reception" }
       ]
     },
     {
@@ -54,8 +54,8 @@
       "title": "Regular & Special Occasion",
       "description": "Untuk graduation, engagement, sungkeman, atau acara spesial lainnya.",
       "packages": [
-        { "name": "Regular Makeup", "price": "Rp 0.000.000", "note": "EDIT: isi harga asli" },
-        { "name": "Special Occasion", "price": "Rp 0.000.000", "note": "EDIT: isi harga asli" }
+        { "name": "Regular Makeup" },
+        { "name": "Special Occasion" }
       ]
     },
     {
@@ -64,8 +64,8 @@
       "title": "Photoshoot Makeup",
       "description": "Camera-ready look yang tetap flawless dari berbagai angle.",
       "packages": [
-        { "name": "Pre-Wedding / Prewedding", "price": "Rp 0.000.000", "note": "EDIT: isi harga asli" },
-        { "name": "Brand / Personal Shoot", "price": "Rp 0.000.000", "note": "EDIT: isi harga asli" }
+        { "name": "Pre-Wedding / Prewedding" },
+        { "name": "Brand / Personal Shoot" }
       ]
     },
     {
