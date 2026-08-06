@@ -201,12 +201,16 @@ section { padding: 80px 0; }
 .service-card h3 .italic-serif { color: var(--wine-light); }
 .service-card > p { opacity: 0.8; margin-bottom: 26px; }
 .package-row {
-  display: flex; justify-content: space-between; align-items: baseline;
+  display: flex; justify-content: space-between; align-items: center;
   padding: 18px 0; border-top: 1px solid rgba(94,26,34,0.1); gap: 16px;
 }
 .package-row .pkg-name { font-weight: 700; }
-.package-row .pkg-note { font-size: 0.8rem; opacity: 0.55; display: block; }
-.package-row .pkg-price { font-family: var(--font-display); color: var(--wine); font-weight: 700; white-space: nowrap; }
+.package-row .pkg-price-btn {
+  font-family: var(--font-display); font-weight: 700; white-space: nowrap;
+  color: var(--wine); border: 1.5px solid var(--wine); border-radius: 999px;
+  padding: 8px 16px; font-size: 0.85rem; transition: background 0.15s, color 0.15s;
+}
+.package-row .pkg-price-btn:hover { background: var(--wine); color: var(--white); }
 .service-card .cta-link {
   display: inline-block; margin-top: 28px; background: var(--wine); color: var(--white);
   padding: 14px 28px; border-radius: 999px; font-weight: 700; font-family: var(--font-display);
