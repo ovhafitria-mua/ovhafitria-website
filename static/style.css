@@ -104,7 +104,6 @@ header.site-nav {
 .menu-row.is-last .num { background: rgba(255,255,255,0.25); color: var(--white); }
 .menu-row-inner { display: flex; align-items: center; }
 .menu-overlay-foot { text-align: center; padding: 40px 24px 60px; }
-.menu-overlay-foot .brand { display: block; margin-bottom: 8px; }
 .menu-overlay-foot p { font-size: 0.82rem; opacity: 0.7; margin: 4px 0; }
 
 /* ============================================
