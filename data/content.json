@@ -15,6 +15,7 @@
   "hero": {
     "eyebrow": "MAKEUP ARTIST • BASED IN KOTA BANJAR • READY TO TRAVEL ANYWHERE",
     "name": "Ovha Fitria",
+    "logo": "images/logo.png",
     "tagline": "Let's create Soft Luxe Glam on your special day with Ovha Fitria",
     "photo": "images/hero.jpg",
     "cta_primary": { "label": "Booking via WhatsApp", "href": "#booking" },
