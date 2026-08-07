@@ -110,7 +110,7 @@
         <h3>{{ tparts[0] }}{% if tparts|length > 1 %} <span class="italic-serif">{{ tparts[1] }}</span>{% endif %}</h3>
         <p>{{ s.description }}</p>
         {% for pkg in s.packages %}
-        {% set pkg_msg = 'Halo kak Ovha, saya mau tanya harga untuk paket ' ~ pkg.name ~ ' (' ~ s.title ~ ').' %}
+        {% set pkg_msg = 'Halo kak Ovha, saya mau tanya harga untuk paket ' ~ pkg.name ~ ' (' ~ s.title ~ ').\nNama : \nJumlah yang dimakeup : \nHairdo/Hijab : \nTanggal : \nLokasi/Alamat: \nJam selesai make up : \n*ini bukan form booking, hanya untuk klasifikasi pricelist dan availability check*' %}
         <div class="package-row">
           <span class="pkg-name">{{ pkg.name }}</span>
           <a class="pkg-price-btn" href="https://wa.me/{{ booking.whatsapp_number }}?text={{ pkg_msg | urlencode }}" target="_blank" rel="noopener">Tanya Harga &rarr;</a>
