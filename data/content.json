@@ -65,6 +65,7 @@
       "tab_label": "Photoshoot",
       "title": "Photoshoot Makeup",
       "description": "Camera-ready look yang tetap flawless dari berbagai angle.",
+      "image": "images/service-photoshoot.jpg",
       "packages": [
         { "name": "Pre-Wedding / Prewedding" },
         { "name": "Brand / Personal Shoot" }
