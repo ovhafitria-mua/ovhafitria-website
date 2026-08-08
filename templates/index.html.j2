@@ -107,6 +107,11 @@
     {% set tparts = s.title.split(' ', 1) %}
     <div class="tab-panel{% if loop.first %} active{% endif %}" id="panel-{{ s.id }}">
       <div class="service-card">
+        {% if s.image %}
+        <div class="service-photo">
+          <img src="{{ s.image }}" alt="{{ s.title }}">
+        </div>
+        {% endif %}
         <h3>{{ tparts[0] }}{% if tparts|length > 1 %} <span class="italic-serif">{{ tparts[1] }}</span>{% endif %}</h3>
         <p>{{ s.description }}</p>
         {% for pkg in s.packages %}
