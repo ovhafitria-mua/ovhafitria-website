@@ -55,6 +55,7 @@
       "tab_label": "Regular & Special",
       "title": "Regular & Special Occasion",
       "description": "Untuk graduation, engagement, sungkeman, atau acara spesial lainnya.",
+      "image": "images/service-photoshoot.jpg",
       "packages": [
         { "name": "Regular Makeup" },
         { "name": "Special Occasion" }
