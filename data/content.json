@@ -44,6 +44,7 @@
       "tab_label": "Bridal",
       "title": "Bridal Makeup",
       "description": "Signature Soft Luxe Glam dengan sentuhan yang lembut, mewah, dan flawless, menciptakan tampilan yang elegan, timeless, dan berkelas.",
+      "image": "images/service-bridal.jpg",
       "packages": [
         { "name": "Ceremony / Reception Only" },
         { "name": "Ceremony & Reception" }
