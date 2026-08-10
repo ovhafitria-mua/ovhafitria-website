@@ -107,13 +107,16 @@
     ]
   },
   "testimonials": {
-    "heading": "Kata Mereka",
-    "list": [
-      { "name": "EDIT: Nama Klien", "category": "Bridal", "quote": "EDIT: masukkan testimoni asli dari klien di sini.", "rating": 5 },
-      { "name": "EDIT: Nama Klien", "category": "Regular", "quote": "EDIT: masukkan testimoni asli dari klien di sini.", "rating": 5 },
-      { "name": "EDIT: Nama Klien", "category": "Photoshoot", "quote": "EDIT: masukkan testimoni asli dari klien di sini.", "rating": 5 }
-    ]
-  },
+  "heading": "Kata Mereka",
+  "list": [
+    { "name": "Bride, Maret 2026", "category": "Bridal", "quote": "Suka banget sama makeup-nya, apalagi lipstik merah pas akad — kulit aku berminyak tapi tetap awet sampe sore.", "rating": 5 },
+    { "name": "Bride, September 2025", "category": "Bridal", "quote": "Bener-bener nggak salah pilih MUA. Makeup-nya bagus banget meski aku nangis dan cuacanya panas.", "rating": 5 },
+    { "name": "Bride, Desember 2025", "category": "Bridal", "quote": "Bikin hari itu jadi aku yang paling cantik sepanjang hidup.", "rating": 5 },
+    { "name": "Bride, September 2025", "category": "Bridal", "quote": "Sempat khawatir muka kering dan bakal patchy, ternyata sama sekali nggak — tangan ajaib teh Ovha!", "rating": 5 },
+    { "name": "Bride, Juni 2025", "category": "Bridal", "quote": "Makeup-nya sesuai request: natural tapi tetap stunning, awet, dan super nyaman. Tim-nya juga ramah & sabar.", "rating": 5 },
+    { "name": "Bride, Januari 2026", "category": "Bridal", "quote": "Makeup-nya cantik banget sesuai yang aku harapkan, walau harus datang jauh-jauh dari Banjar ke Garut.", "rating": 5 }
+  ]
+},
   "booking": {
     "heading": "Booking Sekarang",
     "subheading": "Ceritakan acaramu, Ovha bantu wujudkan look impianmu.",
