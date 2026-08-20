@@ -131,19 +131,14 @@
 <section id="tutorial">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">YouTube</p>
-      <h2>{{ youtube.heading }}</h2>
-      <p>{{ youtube.subheading }}</p>
+      <p class="eyebrow">TikTok</p>
+      <h2>{{ tiktok.heading }}</h2>
+      <p>{{ tiktok.subheading }}</p>
     </div>
-    <div class="video-grid">
-      {% for v in youtube.videos %}
-      <div class="video-frame">
-        <iframe src="{{ v.embed_url }}" title="{{ v.title }}" allowfullscreen loading="lazy"></iframe>
-      </div>
-      {% endfor %}
-    </div>
-    <div style="text-align:center; margin-top:28px;">
-      <a class="cta-link" href="{{ youtube.channel_url }}" target="_blank" rel="noopener">Subscribe di YouTube</a>
+    <div class="tiktok-card">
+      <div class="tiktok-icon">&#9835;</div>
+      <div class="tiktok-handle">{{ tiktok.handle }}</div>
+      <a class="cta-link" href="{{ tiktok.profile_url }}" target="_blank" rel="noopener">Follow di TikTok</a>
     </div>
   </div>
 </section>
