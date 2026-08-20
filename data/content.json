@@ -81,14 +81,12 @@
       ]
     }
   ],
-  "youtube": {
-    "heading": "Tutorial Make Up",
-    "subheading": "Belajar bareng lewat channel YouTube Ovha Fitria",
-    "channel_url": "https://youtu.be/nwLkciIhoZM?sub_confirmation=1",
-    "videos": [
-      { "title": "Make Up Tutorial", "embed_url": "https://www.youtube.com/embed/nwLkciIhoZM" }
-    ]
-  },
+ "tiktok": {
+  "heading": "Tutorial & Behind The Scenes",
+  "subheading": "Follow TikTok Ovha Fitria buat lihat proses makeup, tutorial, dan behind the scenes terbaru",
+  "handle": "@ovhafitria",
+  "profile_url": "https://www.tiktok.com/@ovhafitria"
+},
   "products": {
     "heading": "Racun Ovha Fitria",
     "subheading": "Produk yang Ovha rekomendasikan — cek dulu sebelum belanja!",
