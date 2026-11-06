@@ -1,7 +1,8 @@
 {
   "site": {
     "title": "Ovha Fitria · Make Up Artist",
-    "description": "MUA Bridal & Beauty sejak 2017. Booking makeup, kelas makeup, dan rekomendasi produk oleh Ovha Fitria.",
+    "description": "MUA Bridal & Beauty sejak 2017. Booking makeup dan rekomendasi produk oleh Ovha Fitria.",
+,
     "og_image": "images/hero.jpg"
   },
   "nav": [
@@ -32,9 +33,10 @@
       "Creating Timeless Beauty with Soft Luxe Glam."
     ],
     "highlights": [
-      "MUA sejak 2017",
-      "Kelas Makeup",
-      "Tutorial rutin di YouTube"
+  "MUA sejak 2017",
+  "Portofolio di Instagram"
+]
+
     ]
   },
   "services": [
@@ -71,16 +73,6 @@
         { "name": "Brand / Personal Shoot" }
       ]
     },
-    {
-      "id": "kelas",
-      "tab_label": "Kelas Makeup",
-      "title": "Kelas Makeup",
-      "description": "Segera dibuka — belajar teknik bridal & beauty makeup langsung bersama Ovha.",
-      "packages": [
-        { "name": "Kelas Makeup (Segera Hadir)", "price": "Info menyusul", "note": "EDIT: isi detail saat kelas resmi dibuka" }
-      ]
-    }
-  ],
  "tiktok": {
   "heading": "Tutorial & Behind The Scenes",
   "subheading": "Follow TikTok Ovha Fitria buat lihat proses makeup, tutorial, dan behind the scenes terbaru",
