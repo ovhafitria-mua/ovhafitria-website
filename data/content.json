@@ -36,8 +36,6 @@
   "MUA sejak 2017",
   "Portofolio di Instagram"
 ]
-
-    ]
   },
   "services": [
     {
@@ -72,8 +70,9 @@
         { "name": "Pre-Wedding / Prewedding" },
         { "name": "Brand / Personal Shoot" }
       ]
-    },
- "tiktok": {
+    }
+  ],
+    "tiktok": {
   "heading": "Tutorial & Behind The Scenes",
   "subheading": "Follow TikTok Ovha Fitria buat lihat proses makeup, tutorial, dan behind the scenes terbaru",
   "handle": "@ovhafitria",
