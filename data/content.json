@@ -10,7 +10,8 @@
     { "label": "Services", "href": "#services" },
     { "label": "Tutorial", "href": "#tutorial" },
     { "label": "Racun Ovha", "href": "#racun" },
-    { "label": "Booking", "href": "#booking" }
+    { "label": "Booking", "href": "#booking" },
+    { "label": "Consultation", "href": "#Consultation" }
   ],
   "hero": {
     "eyebrow": "MAKEUP ARTIST • BASED IN KOTA BANJAR • READY TO TRAVEL ANYWHERE",
@@ -105,7 +106,7 @@
   ]
 },
   "booking": {
-    "heading": "Booking Sekarang",
+    "heading": "Konsult Sekarang",
     "subheading": "Ceritakan acaramu, Ovha bantu wujudkan look impianmu.",
     "whatsapp_number": "6282129190323",
     "whatsapp_message": "Halo kak Ovha, saya mau tanya-tanya soal booking makeup."
