@@ -273,7 +273,7 @@ section { padding: 80px 0; }
   font-family: var(--font-display); font-size: 1.05rem;
 }
 /* ============================================
-   CONSULTTATION — dark luxury panel
+   CONSULTATION — dark luxury panel
    ============================================ */
 .consultation-box {
   background: linear-gradient(160deg, var(--wine-dark), var(--wine));
