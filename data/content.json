@@ -113,9 +113,9 @@
   "socials": [
     { "platform": "Instagram", "url": "https://instagram.com/ovhafitria", "handle": "@ovhafitria" },
     { "platform": "YouTube", "url": "https://youtu.be/nwLkciIhoZM", "handle": "Ovha Fitria" },
-    { "platform": "Email", "url": "mailto:ovhafitria16@gmail.com", "handle": "ovhafitria16@gmail.com" }
+    { "platform": "Email", "url": "mailto:info@ovhafitria.com", "handle": "info@ovhafitria.com" }
   ],
   "footer": {
-    "note": "© 2026 Ovha Fitria. Dibuat dengan Python + JSON, di-hosting gratis di GitHub Pages."
+    "note": "© 2026 Ovha Fitria All rights reserved. Powered by CranixsVations"
   }
 }
