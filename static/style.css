@@ -273,22 +273,6 @@ section { padding: 80px 0; }
   font-family: var(--font-display); font-size: 1.05rem;
 }
 /* ============================================
-   CONSULTATION — dark luxury panel
-   ============================================ */
-.consultation-box {
-  background: linear-gradient(160deg, var(--wine-dark), var(--wine));
-  color: var(--cream); border-radius: 36px; padding: 64px 40px; text-align: center;
-}
-.consultation-box .eyebrow { color: var(--peach); }
-.consultation-box h2 { color: var(--cream); font-size: clamp(2rem, 4.5vw, 3rem); margin-top: 12px; }
-.consultation-box h2 .script { color: var(--peach); font-size: 1.3em; }
-.consultation-box p { opacity: 0.8; max-width: 44ch; margin: 16px auto 34px; }
-.consultation-cta {
-  display: inline-block; background: linear-gradient(100deg, var(--peach), var(--wine-light));
-  color: var(--white); padding: 18px 34px; border-radius: 999px; font-weight: 700;
-  font-family: var(--font-display); font-size: 1.05rem;
-}
-/* ============================================
    FOOTER
    ============================================ */
 footer { padding: 44px 0; text-align: center; }
