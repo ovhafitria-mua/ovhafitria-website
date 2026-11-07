@@ -11,7 +11,7 @@
     { "label": "Tutorial", "href": "#tutorial" },
     { "label": "Racun Ovha", "href": "#racun" },
     { "label": "Booking", "href": "#booking" },
-    { "label": "Consultation", "href": "#Consultation" }
+    { "label": "Consultation", "href": "#consultation" }
   ],
   "hero": {
     "eyebrow": "MAKEUP ARTIST • BASED IN KOTA BANJAR • READY TO TRAVEL ANYWHERE",
@@ -106,10 +106,16 @@
   ]
 },
   "booking": {
-    "heading": "Konsult Sekarang",
+    "heading": "Booking Sekarang",
     "subheading": "Ceritakan acaramu, Ovha bantu wujudkan look impianmu.",
     "whatsapp_number": "6282129190323",
     "whatsapp_message": "Halo kak Ovha, saya mau tanya-tanya soal booking makeup."
+  },
+   "consultation": {
+    "heading": "Konsult Sekarang",
+    "subheading": "Ceritakan acaramu, Ovha bantu wujudkan look impianmu.",
+    "whatsapp_number": "6282129190323",
+    "whatsapp_message": "Halo kak Ovha, saya mau tanya-tanya soal makeup."
   },
   "socials": [
     { "platform": "Instagram", "url": "https://instagram.com/ovhafitria", "handle": "@ovhafitria" },
