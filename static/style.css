@@ -293,3 +293,11 @@ footer .fine-print { font-size: 0.78rem; opacity: 0.55; }
 
 a:focus-visible, button:focus-visible { outline: 3px solid var(--peach); outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+.faq-item{background:#fff;border:1px solid #ecdcd0;border-radius:16px;padding:18px 22px;margin:12px 0}
+.faq-item summary{cursor:pointer;font-weight:700;color:#5B1D24;list-style:none}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";float:right;font-size:1.3em;line-height:1}
+.faq-item[open] summary::after{content:"–"}
+.faq-item ul{margin:12px 0 0 18px;padding:0}
+.faq-item li{margin:6px 0}
+.faq-item p{margin:12px 0 0}
