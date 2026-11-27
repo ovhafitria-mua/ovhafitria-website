@@ -179,6 +179,23 @@
     </div>
   </div>
 </section>
+{% if faq %}
+<section id="faq" class="section faq">
+  <div class="container">
+    <h2>{{ faq.heading }}</h2>
+    {% for item in faq.list %}
+    <details class="faq-item">
+      <summary>{{ item.q }}</summary>
+      {% if item.a|length == 1 %}
+      <p>{{ item.a[0] }}</p>
+      {% else %}
+      <ul>{% for line in item.a %}<li>{{ line }}</li>{% endfor %}</ul>
+      {% endif %}
+    </details>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
 
 <section id="booking">
   <div class="wrap">
