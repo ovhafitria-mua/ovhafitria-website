@@ -105,6 +105,35 @@
     { "name": "Bride, Januari 2026", "category": "Bridal", "quote": "Makeup-nya cantik banget sesuai yang aku harapkan, walau harus datang jauh-jauh dari Banjar ke Garut.", "rating": 5 }
   ]
 },
+   "faq": {
+    "heading": "Pertanyaan Umum",
+    "list": [
+      {
+        "q": "Berapa lama durasi makeup?",
+        "a": [
+          "2 jam untuk makeup reguler, termasuk hijab/hairdo",
+          "2,5 jam untuk lamaran, pengajian, dan siraman, termasuk hijab/hairdo",
+          "3–4 jam untuk pengantin, termasuk hijab/hairdo dan pemasangan busana",
+          "1 jam untuk retouch makeup, hijab/hairdo"
+        ]
+      },
+      {
+        "q": "Apakah sudah termasuk hijab stylish / hairdo?",
+        "a": [
+          "Semua layanan makeup sudah termasuk pemasangan hijab",
+          "Semua layanan makeup belum termasuk hairdo",
+          "Hairdo dikerjakan oleh hair stylist profesional dengan harga sesuai pricelist"
+        ]
+      },
+      {
+        "q": "Apakah tarifnya bisa dinegosiasikan?",
+        "a": [
+          "Semua layanan menggunakan tarif tetap. Kami berharap Anda menghargai waktu dan keahlian kami, sama seperti kami menghargai hari besar Anda."
+        ]
+      }
+    ]
+  },
+
   "booking": {
     "heading": "Booking Sekarang",
     "subheading": "Ceritakan acaramu, Ovha bantu wujudkan look impianmu.",
